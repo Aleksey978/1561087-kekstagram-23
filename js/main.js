@@ -1,20 +1,20 @@
-let randomNumber = (min, max) => {
+const RANDOM_NUMBER = (min, max) => {
   if(min >= 0 && max >= min) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-  return 'ощибка';
+  return 'ошибка';
 }
 
-randomNumber(1, 10);
+RANDOM_NUMBER(1, 10);
 
-let allowedLength = 140;
+const ALLOWED_LENGTH = 140;
 
-let checksСommentLength = (comment, allowedLength) => {
-  if (comment.length <= allowedLength) {
+const CHECKS_COMMENT_LENGTH = (comment) => {
+  if (comment.length <= ALLOWED_LENGTH) {
     return true;
   }
 }
 
-checksСommentLength(50);
+CHECKS_COMMENT_LENGTH(50);
