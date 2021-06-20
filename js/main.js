@@ -40,27 +40,18 @@ const COMMENTS = [
 
 const MIN_LIKES = 15;
 const MAX_LIKES = 200;
-const SIMILAR_WIZARD_COUNT = 25;
+const SIMILAR_PHOTO_COUNT = 25;
+const getRandomArrayElement = (elements) => elements[RANDOM_NUMBER(0, elements.length - 1)];
 
-const getRandomUrl = () => {
-  return 'photos/' + RANDOM_NUMBER(1, 25) + '.jpg'
-}
+const randomUrl = () => `photos/ ${RANDOM_NUMBER(1, 25)}.jpg`;
 
-const getRandomArrayElement = (elements) => {
-  return elements[RANDOM_NUMBER(0, elements.length - 1)];
-};
+const createPhoto = () => ({
+  id: RANDOM_NUMBER(1, 25),
+  url: randomUrl,
+  description: '',
+  likes: RANDOM_NUMBER(MIN_LIKES, MAX_LIKES),
+  comments: getRandomArrayElement(COMMENTS),
+  names: getRandomArrayElement(NAMES),
+});
 
-const createPhoto = () => {
-  return {
-    id: RANDOM_NUMBER(1, 25),
-    url: getRandomUrl(),
-    description: '',
-    likes: RANDOM_NUMBER(MIN_LIKES, MAX_LIKES),
-    comments: getRandomArrayElement(COMMENTS),
-    names: getRandomArrayElement(NAMES),
-  };
-};
-
-const similarWizards = new Array(SIMILAR_WIZARD_COUNT).fill(null).map(() => createPhoto());
-
-console.log(similarWizards);
+const similarPhotos = new Array(SIMILAR_PHOTO_COUNT).fill(null).map(() => createPhoto());
