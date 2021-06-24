@@ -25,11 +25,9 @@ const MAX_LIKES = 200;
 const SIMILAR_PHOTO_COUNT = 25;
 const getRandomArrayElement = (elements) => elements[randomNumber(0, elements.length - 1)];
 
-const randomUrl = () => `photos/ ${randomNumber(1, 25)}.jpg`;
-
 const createPhoto = () => ({
   id: randomNumber(1, 25),
-  url: randomUrl,
+  url: `photos/${randomNumber(1, 25)}.jpg`,
   description: '',
   likes: randomNumber(MIN_LIKES, MAX_LIKES),
   comments: getRandomArrayElement(COMMENTS),
