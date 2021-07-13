@@ -683,6 +683,10 @@ main {
   border-radius: 5px;
 }
 
+.text__hashtags:focus {
+  color: red;
+}
+
 .text__description {
   width: 450px;
   height: 100px;

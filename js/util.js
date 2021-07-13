@@ -18,4 +18,6 @@ const CHECKS_COMMENT_LENGTH = (comment) => {
 
 CHECKS_COMMENT_LENGTH(60);
 
-export {randomNumber};
+const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
+
+export {randomNumber, isEscEvent};
